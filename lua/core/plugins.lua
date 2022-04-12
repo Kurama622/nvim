@@ -152,6 +152,10 @@ return require('packer').startup(function(use)
         end,
         cmd = "MarkdownPreview",
     }
+    use {
+        'dhruvasagar/vim-table-mode',
+        cmd = 'TableModeToggle'
+    }
 
     -- debug
     use "ravenxrz/DAPInstall.nvim"
@@ -165,7 +169,7 @@ return require('packer').startup(function(use)
     use {
         "rcarriga/nvim-dap-ui",
         config = function()
-            require "debugger.dapui"
+            require "debugger.dap-ui"
         end,
         after = 'nvim-dap'
     }

@@ -13,7 +13,7 @@ require('module')                   -- $HOME/.config/nvim/lua/module/init.lua
 -- $HOME/.config/nvim/lua/core/settings.lua
 
 --[[ nvim event order ]]
--- vim.cmd [[ 
+-- vim.cmd [[
 -- function! s:Log(eventName) abort
 --   silent execute '!echo '.a:eventName.' >> log'
 -- endfunction

@@ -31,6 +31,7 @@ keymap('n',  '<down>',           ':res -5<cr>',                              opt
 keymap('n',  '<left>',           ':vertical resize -5<cr>',                  opts)
 keymap('n',  '<right>',          ':vertical resize +5<cr>',                  opts)
 keymap('n',  '<leader><leader>', '<esc>/<++><CR>:nohlsearch<cr>c4l',         opts)
+keymap('n', '<leader>tm', ':TableModeToggle<cr>', opts)
 
 --[[ debugger keymap ]]
 -- $HOME/.config/nvim/lua/debugger/dap.lua

@@ -20,7 +20,7 @@ local function config_dapi_and_sign()
       numhl = "",
     },
     stopped = {
-      text = "➜", 
+      text = "➜",
       texthl = "LspDiagnosticsSignInformation",
       linehl = "DiagnosticUnderlineInfo",
       numhl = "LspDiagnosticsSignInformation",

@@ -113,7 +113,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
-    after = { "cmp-buffer", "cmp-path", "cmp-cmdline" },
+    after = { "cmp-buffer", "cmp-cmdline", "cmp-path" },
     after_files = { "/home/vegeta/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua" },
     load_after = {
       ["nvim-cmp"] = true
@@ -211,7 +211,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "nvim-autopairs", "cmp_luasnip", "cmp-nvim-lua", "cmp-nvim-lsp" },
+    after = { "cmp-nvim-lsp", "cmp_luasnip", "cmp-nvim-lua", "nvim-autopairs" },
     config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19completion.cmp\frequire\0" },
     load_after = {
       LuaSnip = true
@@ -232,7 +232,7 @@ _G.packer_plugins = {
   },
   ["nvim-dap-ui"] = {
     after = { "nvim-dap-virtual-text" },
-    config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19debugger.dapui\frequire\0" },
+    config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20debugger.dap-ui\frequire\0" },
     load_after = {
       ["nvim-dap"] = true
     },
@@ -311,6 +311,15 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vegeta/.local/share/nvim/site/pack/packer/start/vim-startuptime",
     url = "https://github.com/dstein64/vim-startuptime"
+  },
+  ["vim-table-mode"] = {
+    commands = { "TableModeToggle" },
+    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22module.table-mode\frequire\0" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/vegeta/.local/share/nvim/site/pack/packer/opt/vim-table-mode",
+    url = "https://github.com/dhruvasagar/vim-table-mode"
   }
 }
 
@@ -318,6 +327,7 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TableModeToggle lua require("packer.load")({'vim-table-mode'}, { cmd = "TableModeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
@@ -325,8 +335,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'indent-blankline.nvim', 'nvim-treesitter', 'LuaSnip'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'surround.nvim', 'telescope.nvim', 'friendly-snippets', 'nvim-lspconfig', 'nvim-lsp-installer', 'nvim-dap'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'LuaSnip', 'galaxyline.nvim', 'indent-blankline.nvim', 'nvim-treesitter'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'surround.nvim', 'telescope.nvim', 'nvim-lspconfig', 'nvim-dap', 'friendly-snippets', 'nvim-lsp-installer'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
