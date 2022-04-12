@@ -1,0 +1,18 @@
+{
+  "iostream": {
+    "prefix": "ios",
+    "body": [
+        "#include<iostream>",
+        "$1"
+    ],
+    "description": "iostream"
+  },
+  "vector": {
+    "prefix": "vec",
+    "body": [
+        "#include<vector>",
+        "$1"
+    ],
+    "description": "vector"
+  }
+}
