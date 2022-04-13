@@ -11,9 +11,9 @@
         + [光标移动及编辑器的保存与退出](#光标移动及编辑器的保存与退出)
         + [窗口操作](#窗口操作)
         + [文本操作](#文本操作)
-            * [自动补全括号（引号）：nvim-autopairs](#自动补全括号引号nvim-autopairs)
-            * [插入/更改括号（引号）：surround.nvim](#插入更改括号引号surroundnvim)
-            * [自动注释：Comment.nvim](#自动注释Commentnvim)
+            * [自动补全括号（引号） nvim-autopairs](#自动补全括号引号-nvim-autopairs)
+            * [插入/更改括号（引号） surround.nvim](#插入更改括号引号-surroundnvim)
+            * [自动注释 Comment.nvim](#自动注释-Commentnvim)
             * [常用快捷键](#常用快捷键)
     - [代码补全与语言服务协议（LSP）](#代码补全与语言服务协议（LSP）)
         + [nvim-cmp](#nvim-cmp)
@@ -21,9 +21,9 @@
         + [nvim-lightbulb](#nvim-lightbulb)
         + [常用快捷键](#常用快捷键)
     - [代码调试与运行](#代码调试与运行)
-        + [调试器 nvim-dap](#调试器 nvim-dap)
-        + [调试器UI nvim-dap-ui](#调试器UI nvim-dap-ui)
-        + [实时显示变量 nvim-dap-virtual-text](#实时显示变量 nvim-dap-virtual-text)
+        + [调试器 nvim-dap](#调试器-nvim-dap)
+        + [调试器UI nvim-dap-ui](#调试器UI-nvim-dap-ui)
+        + [实时显示变量 nvim-dap-virtual-text](#实时显示变量-nvim-dap-virtual-text)
         + [常用快捷键](#常用快捷键)
     + [文件查找](#文件查找)
         + [telescope](#telescope)
@@ -76,11 +76,11 @@
 用方向键更改当前窗口的大小
 
 #### 文本操作
-##### 自动补全括号（引号）：[nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+##### 自动补全括号（引号） [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
-##### 插入/更改括号（引号）：[surround.nvim](https://github.com/ur4ltz/surround.nvim)
+##### 插入/更改括号（引号） [surround.nvim](https://github.com/ur4ltz/surround.nvim)
 
-##### 自动注释：[Comment.nvim](https://github.com/numToStr/Comment.nvim)
+##### 自动注释 [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 <!-- [![numToStr/Comment.nvim](https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif)](https://github.com/numToStr/Comment.nvim) -->
 
 [<img alt="numToStr/Comment.nvim"  src="https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif" width=60% />](https://github.com/numToStr/Comment.nvim)
