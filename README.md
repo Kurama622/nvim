@@ -15,7 +15,7 @@
             * [插入/更改括号（引号） surround.nvim](#插入更改括号引号-surroundnvim)
             * [自动注释 Comment.nvim](#自动注释-Commentnvim)
             * [常用快捷键](#常用快捷键)
-    - [代码补全与语言服务协议（LSP）](#代码补全与语言服务协议（LSP）)
+    - [代码补全与语言服务协议（LSP）](#代码补全与语言服务协议lsp)
         + [nvim-cmp](#nvim-cmp)
         + [nvim-lspconfig](#nvim-lspconfig)
         + [nvim-lightbulb (for code action)](#nvim-lightbulb-for-code-action)
@@ -136,7 +136,7 @@
 <!-- [![nvim-dap-ui](https://user-images.githubusercontent.com/24252670/126842672-de9c6b78-eec2-4187-b48e-977686ec4080.png)](https://github.com/rcarriga/nvim-dap-ui) -->
 [<img alt="nvim-dap-ui" src="https://user-images.githubusercontent.com/24252670/126842672-de9c6b78-eec2-4187-b48e-977686ec4080.png" width=60% />](https://github.com/rcarriga/nvim-dap-ui)
 
-#### 时实显示变量值 [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
+#### 实时显示变量值 [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 <!-- [![nvim-dap-virtual-text](https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif)](https://github.com/theHamsta/nvim-dap-virtual-text) -->
 
 [<img alt="nvim-dap-virtual-text" src="https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif" width=60% />](https://github.com/theHamsta/nvim-dap-virtual-text)
