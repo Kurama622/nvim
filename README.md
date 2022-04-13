@@ -1,7 +1,7 @@
 ## <center> Nvim hua 配置 </center>
 
-<img alt="nvim-lua.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-lua.png" width="60%" />
-<img alt="nvim-debug.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-debug.png" width="60%" />
+<img alt="nvim-lua.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-lua.png" width="90%" />
+<img alt="nvim-debug.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-debug.png" width="90%" />
 
 <!-- TOC -->
 
