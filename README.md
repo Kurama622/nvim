@@ -1,7 +1,10 @@
 ## <center> Nvim hua 配置 </center>
 
-![nvim-lua](./nvim-lua.png)
-![nvim-debug](./nvim-debug.png)
+![nvim-lua](https://gitee.com/svegeta/screenshot/raw/master/nvim-lua.png)
+
+![nvim-debug](https://gitee.com/svegeta/screenshot/raw/master/nvim-debug.png)
+
+
 <!-- TOC -->
 
 <!-- /TOC -->
