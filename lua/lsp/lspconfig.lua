@@ -22,7 +22,7 @@ local on_attach = function(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     -- 显示帮助文档
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     -- 已用lsp_signature代替
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
@@ -63,7 +63,11 @@ end
 vim.o.updatetime = 250
 vim.lsp.handlers["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"})
 
+
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require('lsp.code_action_utils').code_action_listener()]]
+
 -- vim.cmd([[ autocmd CursorHold <buffer> lua vim.diagnostic.open_float({focusable = false, show_header = false, border = "rounded"}) ]])
+--
 -- LSP settings (for overriding per client)
 
 -- vim.lsp.handlers["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "rounded" })

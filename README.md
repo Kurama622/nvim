@@ -58,6 +58,7 @@
 
 [<img alt="numToStr/Comment.nvim"  src="https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif" width=60% />](https://github.com/numToStr/Comment.nvim)
 
+##### 常用快捷键
 | 快捷键                  | 行为                             |
 |-------------------------|----------------------------------|
 | `+y`                    | 复制选中文本至**系统剪切板**     |
@@ -69,10 +70,35 @@
 | `g` `c` `c`             | 注释当前行                       |
 | `g` `b` `c`             | 注释当前行（采用块注释）         |
 | `[visual]` `g` `c`      | 注释选中行                       |
-| `[visual]` `g` `b`     | 注释选中行（采用块注释）          |
+| `[visual]` `g` `b`      | 注释选中行（采用块注释）         |
 
 #### 代码补全与语言服务器协议（LSP）
-- 
+##### [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+##### [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+##### [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb) (for code action)
+
+[<img alt="kosayoda/nvim-lightbulb"  src="https://camo.githubusercontent.com/6e4fcb68692c1e7bb359299dc0c167f186dfcb5765128fcb6511e93af3dad809/68747470733a2f2f73322e67696679752e636f6d2f696d616765732f6e76696d2d6c6967687462756c622e676966" width=60% />](https://github.com/kosayoda/nvim-lightbulb)
+
+##### 常用快捷键
+| 快捷键           | 行为                         |
+|------------------|------------------------------|
+| `CTRL` + `SPACE` | 显示补全                     |
+| `CTRL` + `e`     | 关闭补全                     |
+| `CENTER`         | 确定补全                     |
+| `TAB`            | 下一个候选词                 |
+| `SHIFT` + `TAB`  | 上一个候选词                 |
+| `SPACE` + `d`    | 将候选词的帮助文档向下翻页   |
+| `SPACE` + `u`    | 将候选词的帮助文档向上翻页   |
+| `g` `d`          | 跳转到定义                   |
+| `g` `D`          | 跳转到声明                   |
+| `g` `r`          | 列出所有使用当前变量的行     |
+| `K`              | 展开光标处关键词的帮助文档   |
+| `SPACE` `r` `n`  | 变量重命名                   |
+| `SPACE` `c` `a`  | code action                  |
+| `SPACE` + `s`    | 显示当前行的语法检查信息     |
+| `SPACE` + `e`    | 显示所有的语法检查信息       |
+| `SPACE` + `-`    | 跳转到上一个语法有问题的地方 |
+| `SPACE` + `=`    | 跳转到下一个语法有问题的地方 |
 
 
 #### 代码调试与运行
@@ -88,6 +114,7 @@
 
 [<img alt="nvim-dap-virtual-text" src="https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif" width=60% />](https://github.com/theHamsta/nvim-dap-virtual-text)
 
+##### 常用快捷键
 | 快捷键            | 行为                   |
 |-------------------|------------------------|
 | `SPACE` + `t`     | 开启终端               |
@@ -104,81 +131,3 @@
 | `<SPACE>` `d` `r` | 调出repl窗口           |
 | `<SPACE>` `d` `l` | 重新运行上次的调试器   |
 
-### 
-
-<!--
-### 3 标签页管理
-| 快捷键      | 行为                     |
-|-------------|--------------------------|
-| `t` `u`     | 新建一个标签页           |
-| `t` `n`     | 移至左侧标签页           |
-| `t` `i`     | 移至右侧标签页           |
-| `t` `m` `n` | 将当前标签页向左移动一格 |
-| `t` `m` `i` | 将当前标签页向右移动一格 |
-
-### 4 终端键盘快捷键
-| 快捷键     | 行为             |
-|------------|------------------|
-| `Ctrl` `n` | 退出终端输入模式 |
-
-## 插件快捷键 (截图/动图已经准备好！)
-### 自动补全
-#### [COC (自动补全)](https://github.com/neoclide/coc.nvim)
-| 快捷键          | 行为               |
-|-----------------|--------------------|
-| `Space` `y`     | **打开剪切板历史** |
-| `gd`            | 列出定义列表       |
-| `gr`            | 列出参考列表       |
-| `gi`            | 待办事项清单       |
-| `gy`            | 转至类型定义       |
-| `Space` `r` `n` | 重命名变量         |
-
-<img alt="Gif" src="https://user-images.githubusercontent.com/251450/55285193-400a9000-53b9-11e9-8cff-ffe4983c5947.gif" width="60%" />
-
-#### [Ultisnips](https://github.com/SirVer/ultisnips)
-| 快捷键     | 行为                     |
-|------------|--------------------------|
-| `Ctrl` `e` | 召唤一个代码片段         |
-| `Ctrl` `n` | 在一个代码片段中前移光标 |
-| `Ctrl` `e` | 在一个代码片段中后移光标 |
-
-![GIF Demo](https://raw.github.com/SirVer/ultisnips/master/doc/demo.gif)
-
-
-
-### 文字编辑
-#### [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
-| 快捷键          | 行为         |
-|-----------------|--------------|
-| `SPACE` `t` `m` | 开关表格模式 |
-| `SPACE` `t` `r` | 重组表格     |
-
-See `:help table-mode.txt` for more.
-
-#### [vim-markdown-toc (为 Markdown 文件生成目录)](https://github.com/mzlogin/vim-markdown-toc)
-在 `Markdown` 文件中, 按下 `:Gen` 打开菜单，你将会看到可选选项
-
-<img alt="Gif" src="https://raw.githubusercontent.com/mzlogin/vim-markdown-toc/master/screenshots/english.gif" width="60%" />
-
-### 缓冲区内导航
-#### [vim-easy-motion](https://github.com/easymotion/vim-easymotion)
-按 `'` 键和一个 `字母` 跳转至 `字母` (类似 Emacs 的 [AceJump](https://www.emacswiki.org/emacs/AceJump))
-
-<img alt="Gif" src="https://f.cloud.github.com/assets/3797062/2039359/a8e938d6-899f-11e3-8789-60025ea83656.gif" width="60%" />
-
-### 查找与替换
-#### [Far.vim - 查找与替换](https://github.com/brooth/far.vim)
-按下 `SPACE` `f` `r` 在工作目录中搜索
-
-<img alt="Gif" src="https://cloud.githubusercontent.com/assets/9823254/20861878/77dd1882-b9b4-11e6-9b48-8bc60f3d7ec0.gif" width="60%" />
-
-
-### 其它
-
-<img alt="Png" src="https://raw.github.com/junegunn/i/master/goyo.png" width="60%" />
-
-#### [coc-translator](https://github.com/voldikss/coc-translator)
-按下 `ts` 来 **翻译光标所在的单词**.
-
-<img alt="Png" src="https://user-images.githubusercontent.com/20282795/72232547-b56be800-35fc-11ea-980a-3402fea13ec1.png" width="60%" />
--->

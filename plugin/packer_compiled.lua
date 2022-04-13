@@ -113,7 +113,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
-    after = { "cmp-buffer", "cmp-cmdline", "cmp-path" },
+    after = { "cmp-cmdline", "cmp-buffer", "cmp-path" },
     after_files = { "/home/vegeta/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua" },
     load_after = {
       ["nvim-cmp"] = true
@@ -211,7 +211,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lsp", "cmp_luasnip", "cmp-nvim-lua", "nvim-autopairs" },
+    after = { "cmp-nvim-lsp", "cmp-nvim-lua", "nvim-autopairs", "cmp_luasnip" },
     config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19completion.cmp\frequire\0" },
     load_after = {
       LuaSnip = true
@@ -250,6 +250,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/vegeta/.local/share/nvim/site/pack/packer/opt/nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/home/vegeta/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lsp-installer"] = {
     config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22lsp.lsp_installer\frequire\0" },
@@ -314,7 +319,6 @@ _G.packer_plugins = {
   },
   ["vim-table-mode"] = {
     commands = { "TableModeToggle" },
-    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22module.table-mode\frequire\0" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
@@ -335,8 +339,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'LuaSnip', 'galaxyline.nvim', 'indent-blankline.nvim', 'nvim-treesitter'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'surround.nvim', 'telescope.nvim', 'nvim-lspconfig', 'nvim-dap', 'friendly-snippets', 'nvim-lsp-installer'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'indent-blankline.nvim', 'LuaSnip', 'nvim-treesitter'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'friendly-snippets', 'nvim-dap', 'nvim-lsp-installer', 'nvim-lspconfig', 'surround.nvim', 'telescope.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

@@ -123,6 +123,13 @@ return require('packer').startup(function(use)
         end,
         event = "VimEnter"
     }
+    use {
+        "kosayoda/nvim-lightbulb",
+        config = function()
+            require "module.nvim-lightbulb"
+        end,
+        event = "VimEnter"
+    }
 
     -- test nvim startup time
     use 'dstein64/vim-startuptime'
