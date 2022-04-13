@@ -54,7 +54,9 @@
 ##### 插入/更改括号（引号） [surround.nvim](https://github.com/ur4ltz/surround.nvim)
 
 ##### 自动注释 [Comment.nvim](https://github.com/numToStr/Comment.nvim)
-[![numToStr/Comment.nvim](https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif)](https://github.com/numToStr/Comment.nvim)
+<!-- [![numToStr/Comment.nvim](https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif)](https://github.com/numToStr/Comment.nvim) -->
+
+[<img alt="numToStr/Comment.nvim"  src="https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif" width=60% />](https://github.com/numToStr/Comment.nvim)
 
 | 快捷键                  | 行为                             |
 |-------------------------|----------------------------------|
@@ -78,11 +80,13 @@
 ##### 调试器 [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 
 ##### 调试UI [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-[![nvim-dap-ui](https://user-images.githubusercontent.com/24252670/126842672-de9c6b78-eec2-4187-b48e-977686ec4080.png)](https://github.com/rcarriga/nvim-dap-ui)
+<!-- [![nvim-dap-ui](https://user-images.githubusercontent.com/24252670/126842672-de9c6b78-eec2-4187-b48e-977686ec4080.png)](https://github.com/rcarriga/nvim-dap-ui) -->
+[<img alt="nvim-dap-ui" src="https://user-images.githubusercontent.com/24252670/126842672-de9c6b78-eec2-4187-b48e-977686ec4080.png" width=60% />](https://github.com/rcarriga/nvim-dap-ui)
 
 ##### 时实显示变量值 [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
-[![nvim-dap-virtual-text](https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif)](https://github.com/theHamsta/nvim-dap-virtual-text)
+<!-- [![nvim-dap-virtual-text](https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif)](https://github.com/theHamsta/nvim-dap-virtual-text) -->
 
+[<img alt="nvim-dap-virtual-text" src="https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif" width=60% />](https://github.com/theHamsta/nvim-dap-virtual-text)
 
 | 快捷键            | 行为                   |
 |-------------------|------------------------|
