@@ -1,4 +1,4 @@
-<center> <h2>  Neovim lua 配置 </center>
+<h2 style="text-align: center;">  Neovim lua 配置 </h2>
 
 <img alt="nvim-lua.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-lua.png" width="90%" />
 <img alt="nvim-debug.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-debug.png" width="90%" />
