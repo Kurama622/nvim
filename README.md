@@ -72,14 +72,14 @@
 | `[visual]` `g` `c`      | 注释选中行                       |
 | `[visual]` `g` `b`      | 注释选中行（采用块注释）         |
 
-#### 代码补全与语言服务器协议（LSP）
-##### [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-##### [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-##### [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb) (for code action)
+### 代码补全与语言服务器协议（LSP）
+#### [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+#### [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+#### [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb) (for code action)
 
 [<img alt="kosayoda/nvim-lightbulb"  src="https://camo.githubusercontent.com/6e4fcb68692c1e7bb359299dc0c167f186dfcb5765128fcb6511e93af3dad809/68747470733a2f2f73322e67696679752e636f6d2f696d616765732f6e76696d2d6c6967687462756c622e676966" width=60% />](https://github.com/kosayoda/nvim-lightbulb)
 
-##### 常用快捷键
+#### 常用快捷键
 | 快捷键           | 行为                         |
 |------------------|------------------------------|
 | `CTRL` + `SPACE` | 显示补全                     |
@@ -101,20 +101,20 @@
 | `SPACE` + `=`    | 跳转到下一个语法有问题的地方 |
 
 
-#### 代码调试与运行
+### 代码调试与运行
 
-##### 调试器 [nvim-dap](https://github.com/mfussenegger/nvim-dap)
+#### 调试器 [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 
-##### 调试UI [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+#### 调试UI [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 <!-- [![nvim-dap-ui](https://user-images.githubusercontent.com/24252670/126842672-de9c6b78-eec2-4187-b48e-977686ec4080.png)](https://github.com/rcarriga/nvim-dap-ui) -->
 [<img alt="nvim-dap-ui" src="https://user-images.githubusercontent.com/24252670/126842672-de9c6b78-eec2-4187-b48e-977686ec4080.png" width=60% />](https://github.com/rcarriga/nvim-dap-ui)
 
-##### 时实显示变量值 [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
+#### 时实显示变量值 [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 <!-- [![nvim-dap-virtual-text](https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif)](https://github.com/theHamsta/nvim-dap-virtual-text) -->
 
 [<img alt="nvim-dap-virtual-text" src="https://user-images.githubusercontent.com/7189118/81495701-6b48f980-92b2-11ea-8df4-dd476dc825bc.gif" width=60% />](https://github.com/theHamsta/nvim-dap-virtual-text)
 
-##### 常用快捷键
+#### 常用快捷键
 | 快捷键            | 行为                   |
 |-------------------|------------------------|
 | `SPACE` + `t`     | 开启终端               |
@@ -131,3 +131,42 @@
 | `<SPACE>` `d` `r` | 调出repl窗口           |
 | `<SPACE>` `d` `l` | 重新运行上次的调试器   |
 
+### 文件查找
+#### [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
+<img alt="telescope" src="https://camo.githubusercontent.com/3d59e34d1f406890adf620546d3d97017ce0aacda034b1788c66fa872f192134/68747470733a2f2f692e696d6775722e636f6d2f5454546a6136742e676966" width=60% />
+
+#### 常用快捷键
+
+| 快捷键       | 行为                 |
+|--------------|----------------------|
+| `CTRL` + `f` | 查找文件             |
+| `CTRL` + `b` | 查找缓冲区（buffer） |
+| `CTRL` + `l` | 查找文本             |
+| `CTRL` + `h` | 查找历史文件         |
+| `ALT` + `h`  | 查找帮助命令         |
+| `CTRL` + `j` | 选择下一个文件       |
+| `CTRL` + `k` | 选择上一个文件       |
+| `CTRL` + `u` | 预览区往前翻页       |
+| `CTRL` + `f` | 预览区往后翻页       |
+
+### 其他
+
+#### [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+
+<img alt="markdown-preview.nvim" src="https://user-images.githubusercontent.com/5492542/47603494-28e90000-da1f-11e8-9079-30646e551e7a.gif" width=60% />
+
+按下`<F5>`即可开启预览
+#### [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
+
+`SPACE` `t` `m`开启表格对齐
+
+### 本配置文件的懒加载原则
+
+- 对于表格对齐、markdown预览等特殊用途的插件，在调用时加载。
+
+- LSP会根据不同的语言类型选择对应的服务器进行加载，但LSP的配置会在neovim初始化完成之后进行加载，因为我们打开一个程序，肯定是需要语法检查功能的，谁也不想自己观摩了半天的程序，是个错误的范例。
+
+- 对于`treesitter`（语法高亮增强）、状态栏、`indent-blankline`（显示缩进线）、`LuaSnip`（代码片段）、代码补全在进入插入模式时加载。因为代码片段和代码补全几乎只有在插入模式下才能用得到，而语法高亮增强等则不太重要，如果我打开一个文件，直到退出也没有进入插入模式，那这个文件多半我只是看一看，这时候只需要为我提供简单的语法高亮即可。
+
+- 对于调试的插件，会在neovim初始化完成之后进行加载。之所以不在插入模式下加载，主要是因为对于一个文件，即使我们不对它进行编辑，也可能会有对它调试的需求。
