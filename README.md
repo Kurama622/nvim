@@ -22,7 +22,7 @@
         + [常用快捷键](#常用快捷键)
     - [代码调试与运行](#代码调试与运行)
         + [调试器 nvim-dap](#调试器-nvim-dap)
-        + [调试器UI nvim-dap-ui](#调试器UI-nvim-dap-ui)
+        + [调试器UI nvim-dap-ui](#调试器ui-nvim-dap-ui)
         + [实时显示变量值 nvim-dap-virtual-text](#实时显示变量值-nvim-dap-virtual-text)
         + [常用快捷键](#常用快捷键)
     + [文件查找](#文件查找)
