@@ -29,7 +29,7 @@
         + [telescope](#telescope)
         + [常用快捷键](#常用快捷键)
     - [其他](#其他)
-        + [markdown-preview.nvim](#markdown-preview.nvim)
+        + [markdown-preview.nvim](#markdown-previewnvim)
         + [vim-table-mode](#vim-table-mode)
     - [本配置文件的懒加载原则](#本配置文件的懒加载原则)
 <!-- /TOC -->
