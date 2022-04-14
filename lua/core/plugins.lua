@@ -187,6 +187,9 @@ return require('packer').startup(function(use)
         end,
         after = 'nvim-dap-ui'
     }
+
+    -- others
+    use "rcarriga/nvim-notify"
     if packer_bootstrap then
         require('packer').sync()
     end

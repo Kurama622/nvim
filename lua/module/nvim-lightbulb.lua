@@ -7,7 +7,7 @@ lightbulb.setup {
     -- Example: {"sumneko_lua", "null-ls"}
     ignore = {},
     sign = {
-        enabled = true,
+        enabled = false,
         -- Priority of the gutter sign
         priority = 10,
     },
@@ -39,7 +39,7 @@ lightbulb.setup {
         hl_mode = "replace",
     },
     status_text = {
-        enabled = true,
+        enabled = false,
         -- Text to provide when code actions are available
         text = "💡",
         -- Text to provide when no actions are available

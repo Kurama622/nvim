@@ -4,7 +4,6 @@
 <img alt="nvim-debug.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-debug.png" width="90%" />
 
 <!-- TOC -->
-
 * [依赖](#依赖)
 * [编辑器操作](#编辑器操作)
 	- [基本操作](#基本操作)
