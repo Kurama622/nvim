@@ -32,6 +32,7 @@
     - [其他](#其他)
         + [markdown-preview.nvim](#markdown-previewnvim)
         + [vim-table-mode](#vim-table-mode)
+        + [nvim-notify](#反卷小助手)
     - [本配置文件的懒加载原则](#本配置文件的懒加载原则)
 <!-- /TOC -->
 
@@ -165,7 +166,6 @@
 DInstall <debugger>
 ```
 
-安装
 ### 文件查找
 #### [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
