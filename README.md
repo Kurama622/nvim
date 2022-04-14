@@ -3,6 +3,8 @@
 <img alt="nvim-lua.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-lua.png" width="90%" />
 <img alt="nvim-debug.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-debug.png" width="90%" />
 
+**建议不要直接使用别人的配置，你可以参考该配置，但最好不要直接克隆，你应该知道如何配置自己的neovim，否则有bug的时候，你会遇到一些麻烦**
+
 <!-- TOC -->
 * [依赖](#依赖)
 * [编辑器操作](#编辑器操作)
@@ -157,6 +159,13 @@
 | `<SPACE>` `d` `r` | 调出repl窗口           |
 | `<SPACE>` `d` `l` | 重新运行上次的调试器   |
 
+**注意**：调试前，你应该先安装对应语言的调试器
+
+```
+DInstall <debugger>
+```
+
+安装
 ### 文件查找
 #### [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
@@ -186,6 +195,13 @@
 #### [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
 
 `SPACE` `t` `m`开启表格对齐
+
+#### 反卷小助手
+
+<img alt="nvim-notify" src="https://gitee.com/svegeta/screenshot/raw/master/notify.png" width=60%>
+
+每40分钟提醒你休息一次。
+
 
 ### 本配置文件的懒加载原则
 
