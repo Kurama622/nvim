@@ -108,7 +108,8 @@ return require('packer').startup(function(use)
         end,
         after= 'nvim-cmp',
     }
-    use 'numToStr/Comment.nvim'
+
+    -- use 'numToStr/Comment.nvim'
     use {
         'lukas-reineke/indent-blankline.nvim',
         config = function()
@@ -125,10 +126,11 @@ return require('packer').startup(function(use)
     }
     use {
         "kosayoda/nvim-lightbulb",
+
         config = function()
             require "module.nvim-lightbulb"
         end,
-        event = "VimEnter"
+        after = "nvim-lspconfig"
     }
 
     -- test nvim startup time

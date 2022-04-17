@@ -5,6 +5,7 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local window = cmp.window
 require('luasnip/loaders/from_vscode').lazy_load()
 require("luasnip.loaders.from_vscode").load({
     -- Load snippets from my-snippets dir ($HOME/.config/nvim/my-snippets)
@@ -102,9 +103,13 @@ cmp.setup({
         { name = 'path'},
     }),
     -- ... Your other configuration ...
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
+    -- documentation = {
+        -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    -- },
 })
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {

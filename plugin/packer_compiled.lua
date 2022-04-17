@@ -69,11 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["Comment.nvim"] = {
-    loaded = true,
-    path = "/home/vegeta/.local/share/nvim/site/pack/packer/start/Comment.nvim",
-    url = "https://github.com/numToStr/Comment.nvim"
-  },
   ["DAPInstall.nvim"] = {
     loaded = true,
     path = "/home/vegeta/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
@@ -113,7 +108,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
-    after = { "cmp-buffer", "cmp-path", "cmp-cmdline" },
+    after = { "cmp-buffer", "cmp-cmdline", "cmp-path" },
     after_files = { "/home/vegeta/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua" },
     load_after = {
       ["nvim-cmp"] = true
@@ -211,7 +206,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lsp", "cmp-nvim-lua", "cmp_luasnip", "nvim-autopairs" },
+    after = { "cmp-nvim-lsp", "cmp-nvim-lua", "nvim-autopairs", "cmp_luasnip" },
     config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19completion.cmp\frequire\0" },
     load_after = {
       LuaSnip = true
@@ -253,9 +248,11 @@ _G.packer_plugins = {
   },
   ["nvim-lightbulb"] = {
     config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26module.nvim-lightbulb\frequire\0" },
+    load_after = {
+      ["nvim-lspconfig"] = true
+    },
     loaded = false,
     needs_bufread = false,
-    only_cond = false,
     path = "/home/vegeta/.local/share/nvim/site/pack/packer/opt/nvim-lightbulb",
     url = "https://github.com/kosayoda/nvim-lightbulb"
   },
@@ -268,7 +265,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    after = { "lsp_signature.nvim" },
+    after = { "nvim-lightbulb", "lsp_signature.nvim" },
     config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18lsp.lspconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -339,16 +336,16 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TableModeToggle lua require("packer.load")({'vim-table-mode'}, { cmd = "TableModeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'LuaSnip', 'nvim-treesitter', 'indent-blankline.nvim', 'galaxyline.nvim'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-dap', 'nvim-lightbulb', 'nvim-lsp-installer', 'surround.nvim', 'telescope.nvim', 'friendly-snippets', 'nvim-lspconfig'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'indent-blankline.nvim', 'nvim-treesitter', 'LuaSnip'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-lsp-installer', 'friendly-snippets', 'nvim-dap', 'surround.nvim', 'nvim-lspconfig', 'telescope.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
