@@ -1,4 +1,4 @@
--- require('module.comment')               -- $HOME/.config/nvim/lua/module/comment.lua
+require('module.comment')               -- $HOME/.config/nvim/lua/module/comment.lua
 require('module.colorscheme')           -- $HOME/.config/nvim/lua/module/colorscheme.lua
 require('module.fterm')                 -- $HOME/.config/nvim/lua/module/fterm.lua
 require('module.notify')                -- $HOME/.config/nvim/lua/module/notify.lua

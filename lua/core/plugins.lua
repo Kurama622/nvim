@@ -109,7 +109,11 @@ return require('packer').startup(function(use)
         after= 'nvim-cmp',
     }
 
-    -- use 'numToStr/Comment.nvim'
+    use {
+        'numToStr/Comment.nvim',
+    }
+
+
     use {
         'lukas-reineke/indent-blankline.nvim',
         config = function()

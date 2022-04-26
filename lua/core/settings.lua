@@ -20,6 +20,7 @@ o.signcolumn     = 'yes'
 o.mouse          = 'a'
 o.ts             = 4
 o.shiftwidth     = 4
+o.laststatus     = 3
 op.list          = true
 op.listchars     = {tab = '▸ ', trail = '▫'}  -- op.listchars     = {tab = '▸ ', trail = '▫', eol = '↵'}
 
