@@ -63,8 +63,8 @@ end
 vim.o.updatetime = 250
 vim.lsp.handlers["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"})
 
+vim.lsp.handlers["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "rounded" })
 
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require('lsp.code_action_utils').code_action_listener()]]
 
 -- vim.cmd([[ autocmd CursorHold <buffer> lua vim.diagnostic.open_float({focusable = false, show_header = false, border = "rounded"}) ]])
 --

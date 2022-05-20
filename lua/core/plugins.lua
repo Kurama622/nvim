@@ -95,7 +95,7 @@ return require('packer').startup(function(use)
     }
 
     -- colortheme
-    use 'lunarvim/darkplus.nvim'
+    use 'StubbornVegeta/darkplus.nvim'
 
     -- floating term
     use 'numToStr/FTerm.nvim'
@@ -136,7 +136,6 @@ return require('packer').startup(function(use)
         end,
         after = "nvim-lspconfig"
     }
-
     -- test nvim startup time
     use 'dstein64/vim-startuptime'
 

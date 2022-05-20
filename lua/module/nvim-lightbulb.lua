@@ -1,4 +1,5 @@
 vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+-- vim.cmd([[autocmd CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
 
 local lightbulb = require'nvim-lightbulb'
 -- Showing defaults
