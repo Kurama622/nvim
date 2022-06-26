@@ -9,7 +9,7 @@ require("dapui").setup({
     repl = "r",
     toggle = "t",
   },
-  sidebar = {
+  layouts = {
     -- You can change the order of elements in the sidebar
     elements = {
       -- Provide as ID strings or tables with "id" and "size" keys
@@ -24,7 +24,7 @@ require("dapui").setup({
     size = 40,
     position = "right", -- Can be "left", "right", "top", "bottom"
   },
-  tray = {
+  layouts = {
     elements = { "repl" },
     size = 5,
     position = "bottom", -- Can be "left", "right", "top", "bottom"

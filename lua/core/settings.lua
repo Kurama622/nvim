@@ -7,6 +7,13 @@ if fn.isdirectory(my_backupdir) == 0 then
     vim.api.nvim_command("!mkdir -p " .. my_backupdir)
     vim.api.nvim_command("!mkdir -p " .. my_undodir)
 end
+
+vim.cmd [[ 
+    if has('wsl')
+      set clipboard+=unnamedplus
+    endif
+]]
+
 o.number         = true
 o.relativenumber = true
 o.cursorline     = true

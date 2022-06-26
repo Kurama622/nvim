@@ -101,13 +101,13 @@ require('telescope').setup{
 }
 -- require("telescope").load_extension "file_browser"
 
-local keymap = vim.api.nvim_set_keymap
+--[[ local keymap = vim.api.nvim_set_keymap
 local ops = { noremap = true, silent = true }
 keymap('n', '<c-f>', ':lua require(\'telescope.builtin\').find_files()<cr>', ops)
 keymap('n', '<c-b>', ':lua require(\'telescope.builtin\').buffers()<cr>', ops)
 keymap('n', '<c-l>', ':lua require(\'telescope.builtin\').live_grep()<cr>', ops)
 keymap('n', '<c-h>', ':lua require(\'telescope.builtin\').oldfiles()<cr>', ops)
-keymap('n', '<M-h>', ':lua require(\'telescope.builtin\').help_tags()<cr>', ops)
+keymap('n', '<M-h>', ':lua require(\'telescope.builtin\').help_tags()<cr>', ops) ]]
 -- keymap('n', '<leader>fb', ':Telescope file_browser<cr>', ops)
 
 

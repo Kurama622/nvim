@@ -1,5 +1,6 @@
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+
 keymap('n',  '<space>',          '<nop>',                                    opts)
 vim.g.mapleader = ' '
 keymap('n',  '<leader><cr>',     ':set hlsearch!<cr>',                       opts)
@@ -32,6 +33,37 @@ keymap('n',  '<left>',           ':vertical resize -5<cr>',                  opt
 keymap('n',  '<right>',          ':vertical resize +5<cr>',                  opts)
 keymap('n',  '<leader><leader>', '<esc>/<++><CR>:nohlsearch<cr>c4l',         opts)
 keymap('n', '<leader>tm', ':TableModeToggle<cr>', opts)
+keymap('n', '<c-f>', ':Telescope find_files<cr>', opts)
+keymap('n', '<c-b>', ':Telescope buffers<cr>', opts)
+keymap('n', '<c-l>', ':Telescope live_grep<cr>', opts)
+keymap('n', '<c-h>', ':Telescope oldfiles<cr>', opts)
+keymap('n', '<M-h>', ':Telescope help_tags<cr>', opts)
+
+-- vim.g.clipboard = {
+--     name = 'win32yank',
+--     copy = {
+--         ['+'] = 'win32yank.exe -i --crlf',
+--         ['*'] = 'win32yank.exe -i --crlf',
+--     },
+--     paste = {
+--         ['+'] = 'win32yank.exe -o --lf',
+--         ['*'] = 'win32yank.exe -o --lf',
+--     },
+--     cache_enabled = 0
+-- }
+
+-- vim.g.clipboard = {
+--     name = 'win32yank',
+--     copy = {
+--         ['+'] = 'clip.exe',
+--         ['*'] = 'clip.exe',
+--     },
+--     paste = {
+--         ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+--         ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+--     },
+--     cache_enabled = 0
+-- }
 
 --[[ debugger keymap ]]
 -- $HOME/.config/nvim/lua/debugger/dap.lua

@@ -141,18 +141,11 @@ return require('packer').startup(function(use)
 
     -- file find
     use { 'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} },
+        requires = { {'nvim-lua/plenary.nvim'} , opt=true},
+        cmd = "Telescope",
         config = function()
             require "module.telescope"
         end,
-        event = 'VimEnter'
-        -- cmd = {
-        --     "lua require('telescope.buildin').find_files()",
-        --     "lua require('telescope.buildin').oldfiles()",
-        --     "lua require('telescope.buildin').buffers()",
-        --     "lua require('telescope.buildin').live_grep()",
-        --     "lua require('telescope.buildin').help_tags()",
-        -- }
     }
 
     -- markdown
