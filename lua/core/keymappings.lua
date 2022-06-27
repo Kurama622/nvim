@@ -5,6 +5,7 @@ keymap('n',  '<space>',          '<nop>',                                    opt
 vim.g.mapleader = ' '
 keymap('n',  '<leader><cr>',     ':set hlsearch!<cr>',                       opts)
 keymap('n',  'S',                ':w<cr>',                                   opts)
+keymap('x',  'S',                '<nop>',                                   opts)
 keymap('n',  's',                '<nop>',                                    opts)
 keymap('n',  'Q',                ':quit<cr>',                                opts)
 keymap('n',  'sl',               ':set splitright<cr>:vsplit<cr>',           opts)
@@ -33,11 +34,31 @@ keymap('n',  '<left>',           ':vertical resize -5<cr>',                  opt
 keymap('n',  '<right>',          ':vertical resize +5<cr>',                  opts)
 keymap('n',  '<leader><leader>', '<esc>/<++><CR>:nohlsearch<cr>c4l',         opts)
 keymap('n', '<leader>tm', ':TableModeToggle<cr>', opts)
+-- telescope
 keymap('n', '<c-f>', ':Telescope find_files<cr>', opts)
 keymap('n', '<c-b>', ':Telescope buffers<cr>', opts)
 keymap('n', '<c-l>', ':Telescope live_grep<cr>', opts)
 keymap('n', '<c-h>', ':Telescope oldfiles<cr>', opts)
 keymap('n', '<M-h>', ':Telescope help_tags<cr>', opts)
+
+-- nvim-dap
+keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opts)
+keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<cr>", opts)
+keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+keymap('n', "<F10>", "<cmd>lua require'debugger.dap-util'.reload_continue()<CR>", opts)
+keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
+keymap("n", "<F2>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<leader>p", "<cmd>lua require'dapui'.eval()<cr>", opts)
+-- keymap("n", "<F4>", ":DapTerminate<cr>", opts)
+-- keymap("n", "<F2>", ":DapContinue<cr>", opts)
+-- keymap("n", "<F6>", ":DapStepOver<cr>", opts)
+-- keymap("n", "<F7>", ":DapStepInto<cr>", opts)
+-- keymap("n", "<F8>", ":DapStepOut<cr>", opts)
+-- keymap("n", "<leader>p", "<cmd>lua require'dapui'.eval()<cr>", opts)
 
 -- vim.g.clipboard = {
 --     name = 'win32yank',

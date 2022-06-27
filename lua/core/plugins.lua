@@ -124,7 +124,7 @@ return require('packer').startup(function(use)
     use {
         "ur4ltz/surround.nvim",
         config = function()
-            require"surround".setup {mappings_style = "surround"}
+            require "module.surround"
         end,
         event = "VimEnter"
     }
@@ -165,18 +165,18 @@ return require('packer').startup(function(use)
     -- debug
     use "ravenxrz/DAPInstall.nvim"
     use {
-        'mfussenegger/nvim-dap',
-        config = function()
-            require "debugger.dap"
-        end,
-        event = 'VimEnter'
-    }
-    use {
         "rcarriga/nvim-dap-ui",
         config = function()
             require "debugger.dap-ui"
         end,
         after = 'nvim-dap'
+    }
+    use {
+        'mfussenegger/nvim-dap',
+        config = function()
+            require("debugger.dap")
+        end,
+        event = 'VimEnter'
     }
     use {
         'theHamsta/nvim-dap-virtual-text',
