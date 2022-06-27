@@ -2,6 +2,7 @@ require('core')                     -- $HOME/.config/nvim/lua/core/init.lua
 require('module')                   -- $HOME/.config/nvim/lua/module/init.lua
 -- require('lsp')                   -- $HOME/.config/nvim/lua/lsp/init.lua         (lazy load)
 -- require('completion.cmp')        -- $HOME/.config/nvim/lua/completion/cmp.lua   (lazy load)
+-- $HOME/.config/nvim/lua/debugger/
 
 --[[ plugins ]]
 -- $HOME/.config/nvim/lua/core/plugins.lua
