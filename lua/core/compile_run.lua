@@ -10,6 +10,8 @@ function CompileRun()
         command("lua require('FTerm').scratch({cmd = 'g++ '..vim.api.nvim_buf_get_name(0) .. ' -Wall -o ' .. vim.fn.expand('%<') .. ' && ./' .. vim.fn.expand('%<')})")
     elseif filetype == "lua" then
         command("luafile %")
+    elseif filetype == "sh" then
+        command("!sh %")
     elseif filetype == "markdown" then
         command("MarkdownPreview")
     end
