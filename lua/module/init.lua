@@ -1,6 +1,8 @@
 require('module.comment')               -- $HOME/.config/nvim/lua/module/comment.lua
 require('module.colorscheme')           -- $HOME/.config/nvim/lua/module/colorscheme.lua
-require('module.fterm')                 -- $HOME/.config/nvim/lua/module/fterm.lua
+-- require('module.fterm')                 -- $HOME/.config/nvim/lua/module/fterm.lua
+-- require('module.toggleterm')               -- $HOME/.config/nvim/lua/module/toggleterm.lua
+-- require('module.fm-nvim')               -- $HOME/.config/nvim/lua/module/toggleterm.lua
 require('module.notify')                -- $HOME/.config/nvim/lua/module/notify.lua
 -- require('module.nvim-lightbulb')     -- $HOME/.config/nvim/lua/module/nvim-lightbulb.lua    (lazy load)
 -- require('module.autopairs')          -- $HOME/.config/nvim/lua/module/autopairs.lua         (lazy load)

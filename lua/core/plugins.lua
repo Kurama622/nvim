@@ -8,6 +8,14 @@ end
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    -- run
+    use {
+        'StubbornVegeta/FloatRun',
+        cmd = {'FloatRun'},
+        config = function()
+            require "core.floatrun"
+        end,
+    }
     -- lsp
     use {
         'neovim/nvim-lspconfig',
@@ -34,7 +42,7 @@ return require('packer').startup(function(use)
     -- snippets
     use {
         'L3MON4D3/LuaSnip',
-        event = 'InsertEnter',
+        after = 'friendly-snippets'
     }
     use {
         'saadparwaiz1/cmp_luasnip',
@@ -42,7 +50,7 @@ return require('packer').startup(function(use)
     }
     use {
         "rafamadriz/friendly-snippets",
-        event = "VimEnter"
+        event = "InsertEnter"
     }
 
     -- completion
@@ -98,7 +106,20 @@ return require('packer').startup(function(use)
     use 'StubbornVegeta/darkplus.nvim'
 
     -- floating term
-    use 'numToStr/FTerm.nvim'
+    -- use 'numToStr/FTerm.nvim'
+    -- use {
+    --     "akinsho/toggleterm.nvim",
+    --     config = function()
+    --         require 'module.toggleterm'
+    --     end,
+    -- }
+    use {
+        "is0n/fm-nvim",
+        cmd = {'Ranger', 'Lazygit'},
+        config = function()
+            require 'module.fm-nvim'
+        end,
+    }
 
     -- edit
     use {
@@ -121,13 +142,15 @@ return require('packer').startup(function(use)
         end,
         event = "InsertEnter"
     }
-    use {
-        "ur4ltz/surround.nvim",
-        config = function()
-            require "module.surround"
-        end,
-        event = "VimEnter"
-    }
+    -- use {
+    --     "ur4ltz/surround.nvim",
+    --     config = function()
+    --         require "module.surround"
+    --     end,
+    --     event = "VimEnter"
+    -- }
+
+    use "tpope/vim-surround"
     use {
         "kosayoda/nvim-lightbulb",
 
@@ -137,7 +160,10 @@ return require('packer').startup(function(use)
         after = "nvim-lspconfig"
     }
     -- test nvim startup time
-    use 'dstein64/vim-startuptime'
+    use {
+        'dstein64/vim-startuptime', 
+        cmd = {"StartupTime"}
+    }
 
     -- file find
     use { 'nvim-telescope/telescope.nvim',
@@ -163,7 +189,11 @@ return require('packer').startup(function(use)
     }
 
     -- debug
-    use "ravenxrz/DAPInstall.nvim"
+    use {
+        "ravenxrz/DAPInstall.nvim",
+        cmd = {"DIInstall", "DIList", "DIUninstall"}
+    }
+
     use {
         "rcarriga/nvim-dap-ui",
         config = function()
@@ -176,7 +206,15 @@ return require('packer').startup(function(use)
         config = function()
             require("debugger.dap")
         end,
-        event = 'VimEnter'
+        cmd = {
+            'DapToggleBreakpoint',
+            'DapToggleRepl',
+            'DapContinue',
+            'DapStepOver',
+            'DapStepOut',
+            'DapStepInto',
+            'DapTerminate'
+        }
     }
     use {
         'theHamsta/nvim-dap-virtual-text',
