@@ -1,18 +1,18 @@
-{
-    "numpy": {
-        "prefix": "numpy",
-        "body": [
-            "import numpy as np",
-            "$1"
-        ],
-        "description": "import numpy"
-  },
-    "plot": {
-        "prefix": "plot",
-        "body": [
-            "import matplotlib.pyplot as plt",
-            "$1"
-        ],
-        "description": "import matplotlib.pyplot"
+{ 
+  "numpy": {
+    "prefix": "numpy", 
+    "body": [ 
+      "import numpy as np", 
+      "$1" 
+    ], 
+    "description": "import numpy" 
+  }, 
+  "plot": { 
+    "prefix": "plot", 
+    "body": [ 
+      "import matplotlib.pyplot as plt", 
+      "$1" 
+    ], 
+    "description": "import matplotlib.pyplot" 
   }
 }
