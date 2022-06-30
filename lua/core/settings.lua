@@ -3,9 +3,11 @@ local fn = vim.fn
 local op = vim.opt
 local my_undodir = fn.stdpath('config')..'/tmp/undo'
 local my_backupdir = fn.stdpath('config')..'/tmp/backup'
+local my_swapdir = fn.stdpath('config')..'/tmp/swap'
 if fn.isdirectory(my_backupdir) == 0 then
     vim.api.nvim_command("!mkdir -p " .. my_backupdir)
     vim.api.nvim_command("!mkdir -p " .. my_undodir)
+    vim.api.nvim_command("!mkdir -p " .. swap)
 end
 
 -- arch wsl doesn't work
@@ -25,6 +27,7 @@ o.undofile       = true
 o.backup         = true
 op.undodir       = my_undodir
 op.backupdir     = my_backupdir
+op.dir           = my_swapdir
 o.signcolumn     = 'yes'
 o.mouse          = 'a'
 o.ts             = 4
