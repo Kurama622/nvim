@@ -34,6 +34,11 @@ keymap('n',  '<left>',           ':vertical resize -5<cr>',                  opt
 keymap('n',  '<right>',          ':vertical resize +5<cr>',                  opts)
 keymap('n',  '<leader><leader>', '<esc>/<++><CR>:nohlsearch<cr>c4l',         opts)
 keymap('n', '<leader>tm', ':TableModeToggle<cr>', opts)
+
+-- comment
+keymap('n', 'gcc', ':CommentToggle<cr>', opts)
+keymap('v', 'gc', ":'<,'>CommentToggle<cr>", opts)
+
 -- telescope
 keymap('n', '<c-f>', ':Telescope find_files<cr>', opts)
 keymap('n', '<c-b>', ':Telescope buffers<cr>', opts)

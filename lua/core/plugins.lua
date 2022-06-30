@@ -127,11 +127,18 @@ return require('packer').startup(function(use)
         config = function()
             require 'module.autopairs'
         end,
-        after= 'nvim-cmp',
+        after = 'nvim-cmp',
+    }
+    use {
+        'mg979/vim-visual-multi',
     }
 
     use {
-        'numToStr/Comment.nvim',
+        'terrortylor/nvim-comment',
+        config = function()
+            require('module.comment')
+        end,
+        cmd = {'CommentToggle'}
     }
 
 
@@ -151,6 +158,7 @@ return require('packer').startup(function(use)
     -- }
 
     use "tpope/vim-surround"
+
     use {
         "kosayoda/nvim-lightbulb",
 
