@@ -13,8 +13,8 @@
         + [窗口操作](#窗口操作)
         + [文本操作](#文本操作)
             * [自动补全括号（引号） nvim-autopairs](#自动补全括号引号-nvim-autopairs)
-            * [插入/更改括号（引号） surround.nvim](#插入更改括号引号-surroundnvim)
-            * [自动注释 Comment.nvim](#自动注释-Commentnvim)
+            * [插入/更改括号（引号） vim-surround](#插入更改括号引号-vim-surround)
+            * [自动注释 nvim-comment](#自动注释-nvim-comment)
             * [常用快捷键](#常用快捷键)
     - [代码补全与语言服务协议（LSP）](#代码补全与语言服务协议lsp)
         + [nvim-cmp](#nvim-cmp)
@@ -82,12 +82,12 @@
 #### 文本操作
 ##### 自动补全括号（引号） [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
-##### 插入/更改括号（引号） [surround.nvim](https://github.com/ur4ltz/surround.nvim)
+##### 插入/更改括号（引号） [vim-surround](https://github.com/tpope/vim-surround)
 
-##### 自动注释 [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+##### 自动注释 [nvim-comment](https://github.com/terrortylor/nvim-comment)
 <!-- [![numToStr/Comment.nvim](https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif)](https://github.com/numToStr/Comment.nvim) -->
 
-[<img alt="numToStr/Comment.nvim"  src="https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif" width=60% />](https://github.com/numToStr/Comment.nvim)
+[<img alt="terrortylor/nvim-comment"  src="https://user-images.githubusercontent.com/42532967/136532939-926a8350-84b7-4e78-b045-fe21b5947388.gif" width=60% />](https://github.com/terrortylor/nvim-comment)
 
 ##### 常用快捷键
 | 快捷键                  | 行为                             |
@@ -96,12 +96,10 @@
 | `+p`                    | 粘贴**系统剪切板**中的文本       |
 | `SPACE` `SPACE`         | 删除下一个 `<++>` 并进入插入模式 |
 | `c` `s` `<from>` `<to>` | 将`<from>`改为`<to>`             |
-| `[visual]` `s` `<char>` | 在选中的文本两侧加入字符`<char>` |
+| `[visual]` `S` `<char>` | 在选中的文本两侧加入字符`<char>` |
 | `d` `s` `<char>`        | 删除成对的`<char>`               |
 | `g` `c` `c`             | 注释当前行                       |
-| `g` `b` `c`             | 注释当前行（采用块注释）         |
 | `[visual]` `g` `c`      | 注释选中行                       |
-| `[visual]` `g` `b`      | 注释选中行（采用块注释）         |
 
 ### 代码补全与语言服务器协议（LSP）
 #### [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
