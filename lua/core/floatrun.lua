@@ -5,7 +5,7 @@ require("FloatRun").setup{
     float_hl = "Normal",
     border_hl = "FloatBorder",
     blend = 0,
-    height = 0.5,
+    height = 0.8,
     width = 0.8,
     x = 0.5,
     y = 0.5
@@ -13,7 +13,7 @@ require("FloatRun").setup{
   run_command = {
     ['cpp'] = 'g++ '..file .. ' -Wall -o ' .. vim.fn.expand('%<') .. ' && ./' .. vim.fn.expand('%<'),
     ['python'] = "python " .. file,
-    ['lua'] = "luafile " .. file,
+    ['lua'] = "luajit " .. file,
     ['sh'] = "sh " .. file,
   }
 }
