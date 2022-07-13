@@ -112,7 +112,11 @@ return require('packer').startup(function(use)
   }
 
   -- colortheme
-  use 'StubbornVegeta/darkplus.nvim'
+  -- use 'StubbornVegeta/darkplus.nvim'
+  use({
+  'glepnir/zephyr-nvim',
+  requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
+})
 
   -- floating term
   use {
