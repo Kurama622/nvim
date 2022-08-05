@@ -3,7 +3,7 @@ require("FloatRun").setup{
   ui = {
     border = "single",
     float_hl = "Normal",
-    border_hl = "FloatBorder",
+    border_hl = "TelescopeBorder",
     blend = 0,
     height = 0.8,
     width = 0.8,

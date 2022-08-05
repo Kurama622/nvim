@@ -32,9 +32,10 @@ o.signcolumn     = 'yes'
 o.mouse          = 'a'
 o.ts             = 4
 o.shiftwidth     = 4
-o.laststatus     = 3
+o.laststatus     = 2
 op.list          = true
 op.listchars     = {tab = '▸ ', trail = '▫'}  -- op.listchars     = {tab = '▸ ', trail = '▫', eol = '↵'}
+op.display       = 'lastline'
 
 vim.cmd [[
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
