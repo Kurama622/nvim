@@ -239,7 +239,22 @@ return require('packer').startup(function(use)
 
   -- others
   use "rcarriga/nvim-notify"
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
+    config = function()
+      require "module.navic"
+    end
+  }
+  use {
+    'stevearc/aerial.nvim',
+    config = function()
+      require('module.aerial-nvim')
+    end
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
+  
 end)

@@ -25,6 +25,7 @@ o.smartindent    = true
 o.termguicolors  = true
 o.undofile       = true
 o.backup         = true
+o.cscopetag      = true
 op.undodir       = my_undodir
 op.backupdir     = my_backupdir
 op.dir           = my_swapdir
@@ -36,6 +37,7 @@ o.laststatus     = 2
 op.list          = true
 op.listchars     = {tab = '▸ ', trail = '▫'}  -- op.listchars     = {tab = '▸ ', trail = '▫', eol = '↵'}
 op.display       = 'lastline'
+o.winbar         = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 vim.cmd [[
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 

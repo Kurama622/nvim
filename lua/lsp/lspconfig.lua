@@ -1,6 +1,8 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
+local navic = require("nvim-navic")
+local aerial = require("aerial")
 
 -- 显示当前行的语法检查信息
 vim.api.nvim_set_keymap('n', '<leader>s', '<cmd>lua vim.diagnostic.open_float({focusable = false, show_header = false, border = "rounded"})<CR>', opts)
@@ -33,6 +35,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  navic.attach(client, bufnr)
+  aerial.on_attach(client, bufnr)
 end
 
 local servers = { 'clangd', 'pyright', 'sumneko_lua'}

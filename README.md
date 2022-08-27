@@ -1,6 +1,6 @@
 <h2 style="text-align: center;">  Neovim lua 配置 </h2>
 
-<img alt="nvim-lua.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-lua.png" width="90%" />
+<img alt="nvim-lua.png" src="https://gitee.com/svegeta/screenshot/raw/master/neovim-show.png" width="90%" />
 <img alt="nvim-debug.png" src="https://gitee.com/svegeta/screenshot/raw/master/nvim-debug.png" width="90%" />
 
 **建议不要直接使用别人的配置，你可以参考该配置，但最好不要直接克隆，你应该知道如何配置自己的neovim，否则有bug的时候，你会遇到一些麻烦 (: 尽管你直接克隆，它也可以用**
