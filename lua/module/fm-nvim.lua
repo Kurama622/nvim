@@ -17,7 +17,7 @@ require('fm-nvim').setup{
 
 			-- Highlight group for floating window/border (see ':h winhl')
 			float_hl  = "Normal",
-			border_hl = "FloatBorder",
+			border_hl = "TelescopeBorder",
 
 			-- Floating Window Transparency (see ':h winblend')
 			blend     = 0,
@@ -66,7 +66,7 @@ require('fm-nvim').setup{
 		horz_split = "<C-h>",
 		tabedit    = "<C-t>",
 		edit       = "<C-e>",
-		ESC        = "q"
+		ESC        = "<Esc>"
 	},
 
 	-- Path to broot config

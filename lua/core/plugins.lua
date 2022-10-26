@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   -- run
   use {
     'StubbornVegeta/FloatRun',
-    cmd = {'FloatRun'},
+    cmd = {'FloatRun', 'FloatTerm'},
     config = function()
         require "core.floatrun"
     end,
@@ -237,6 +237,14 @@ return require('packer').startup(function(use)
     after = 'nvim-dap-ui'
   }
 
+  -- git
+  use {
+    'f-person/git-blame.nvim',
+    config = function()
+      require 'module.blame'
+    end,
+    cmd = 'GitBlameToggle'
+  }
   -- others
   use "rcarriga/nvim-notify"
   use {

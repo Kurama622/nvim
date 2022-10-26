@@ -59,6 +59,8 @@ keymap("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[C
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>p", "<cmd>lua require'dapui'.eval()<cr>", opts)
 keymap('n', '<f5>', ':FloatRun<cr>', {noremap = true, silent = true})
+keymap('n', '<leader>g', ':GitBlameToggle<cr>', {noremap = true, silent = true})
+
 -- keymap('n', "<F10>", "<cmd>lua require'debugger.dap-util'.reload_continue()<CR>", opts)
 -- keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<cr>", opts)
 -- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
