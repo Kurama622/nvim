@@ -13,30 +13,30 @@ return require('packer').startup(function(use)
     'StubbornVegeta/FloatRun',
     cmd = {'FloatRun', 'FloatTerm'},
     config = function()
-        require "core.floatrun"
+        require 'core.floatrun'
     end,
   }
   -- lsp
   use {
     'neovim/nvim-lspconfig',
     config = function()
-        require "lsp.lspconfig"
+        require 'lsp.lspconfig'
     end,
-    event = "VimEnter"
+    event = 'VimEnter'
   }
   use {
-    "ray-x/lsp_signature.nvim",
+    'ray-x/lsp_signature.nvim',
     config = function()
-        require "lsp.lsp_signature"
+        require 'lsp.lsp_signature'
     end,
-    after = "nvim-lspconfig"
+    after = 'nvim-lspconfig'
   }
   use {
     'williamboman/nvim-lsp-installer',
     config = function()
-        require "lsp.lsp_installer"
+        require 'lsp.lsp_installer'
     end,
-    event = "VimEnter"
+    event = 'VimEnter'
   }
 
   -- snippets
@@ -49,15 +49,15 @@ return require('packer').startup(function(use)
     after = 'nvim-cmp'
   }
   use {
-    "rafamadriz/friendly-snippets",
-    event = "InsertEnter"
+    'rafamadriz/friendly-snippets',
+    event = 'InsertEnter'
   }
 
   -- completion
   use {
     'hrsh7th/nvim-cmp',
     config = function()
-        require "completion.cmp"
+        require 'completion.cmp'
     end,
     after = 'LuaSnip'
   }
@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
     after = 'nvim-cmp',
   }
   use {
-    "hrsh7th/cmp-nvim-lua",
+    'hrsh7th/cmp-nvim-lua',
     after = 'nvim-cmp',
   }
   use {
@@ -87,9 +87,9 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
-      require "module.treesitter"
+      require 'module.treesitter'
     end,
-    event = "InsertEnter"
+    event = 'InsertEnter'
   }
 
   -- statusline
@@ -104,10 +104,10 @@ return require('packer').startup(function(use)
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
     config = function()
       require 'module.statusline'
     end,
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
     event = 'InsertEnter',
   }
 
@@ -120,7 +120,7 @@ return require('packer').startup(function(use)
 
   -- floating term
   use {
-    "is0n/fm-nvim",
+    'is0n/fm-nvim',
     cmd = {'Ranger', 'Lazygit'},
     config = function()
       require 'module.fm-nvim'
@@ -151,50 +151,50 @@ return require('packer').startup(function(use)
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require "module.indent-blankline"
+      require 'module.indent-blankline'
     end,
-    event = "InsertEnter"
+    event = 'InsertEnter'
   }
   -- use {
-  --     "ur4ltz/surround.nvim",
+  --     'ur4ltz/surround.nvim',
   --     config = function()
-  --         require "module.surround"
+  --         require 'module.surround'
   --     end,
-  --     event = "VimEnter"
+  --     event = 'VimEnter'
   -- }
 
-  use "tpope/vim-surround"
+  use 'tpope/vim-surround'
 
   use {
-    "kosayoda/nvim-lightbulb",
+    'kosayoda/nvim-lightbulb',
     config = function()
-      require "module.nvim-lightbulb"
+      require 'module.nvim-lightbulb'
     end,
-    after = "nvim-lspconfig"
+    after = 'nvim-lspconfig'
   }
   -- test nvim startup time
   use {
     'dstein64/vim-startuptime', 
-    cmd = {"StartupTime"}
+    cmd = {'StartupTime'}
   }
 
   -- file find
   use { 'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} , opt=true},
-    cmd = "Telescope",
+    requires = { 'nvim-lua/plenary.nvim' , opt=true},
+    cmd = 'Telescope',
     config = function()
-        require "module.telescope"
+        require 'module.telescope'
     end,
   }
 
   -- markdown
   use {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && npm install',
     config = function()
-        require "module.markdown_preview"
+        require 'module.markdown_preview'
     end,
-    cmd = "MarkdownPreview",
+    cmd = 'MarkdownPreview',
   }
   use {
     'dhruvasagar/vim-table-mode',
@@ -203,21 +203,21 @@ return require('packer').startup(function(use)
 
   -- debug
   use {
-    "ravenxrz/DAPInstall.nvim",
-    cmd = {"DIInstall", "DIList", "DIUninstall"}
+    'ravenxrz/DAPInstall.nvim',
+    cmd = {'DIInstall', 'DIList', 'DIUninstall'}
   }
 
   use {
-    "rcarriga/nvim-dap-ui",
+    'rcarriga/nvim-dap-ui',
     config = function()
-      require "debugger.dap-ui"
+      require 'debugger.dap-ui'
     end,
     after = 'nvim-dap'
   }
   use {
     'mfussenegger/nvim-dap',
     config = function()
-        require("debugger.dap")
+        require('debugger.dap')
     end,
     cmd = {
       'DapToggleBreakpoint',
@@ -232,7 +232,7 @@ return require('packer').startup(function(use)
   use {
     'theHamsta/nvim-dap-virtual-text',
     config = function()
-      require "debugger.dap-virtual-text"
+      require 'debugger.dap-virtual-text'
     end,
     after = 'nvim-dap-ui'
   }
@@ -245,13 +245,25 @@ return require('packer').startup(function(use)
     end,
     cmd = 'GitBlameToggle'
   }
-  -- others
-  use "rcarriga/nvim-notify"
+
+  -- bufferline
   use {
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig",
+    'akinsho/bufferline.nvim',
+    tag = 'v3.*',
+    requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require "module.navic"
+      vim.opt.termguicolors = true,
+      require('bufferline').setup{}
+    end
+  }
+
+  -- others
+  use 'rcarriga/nvim-notify'
+  use {
+    'SmiteshP/nvim-navic',
+    requires = 'neovim/nvim-lspconfig',
+    config = function()
+      require 'module.navic'
     end
   }
   use {

@@ -5,9 +5,11 @@ keymap('n',  '<space>',          '<nop>',                                    opt
 vim.g.mapleader = ' '
 keymap('n',  '<leader><cr>',     ':set hlsearch!<cr>',                       opts)
 keymap('n',  'S',                ':w<cr>',                                   opts)
-keymap('x',  'S',                '<nop>',                                   opts)
+keymap('x',  'S',                '<nop>',                                    opts)
 keymap('n',  's',                '<nop>',                                    opts)
-keymap('n',  'Q',                ':quit<cr>',                                opts)
+keymap('n',  'Q',                ':call CloseOnLastBuffer()<cr>',                                  opts)
+keymap('n',  '<tab>',            ':bnext<cr>',                               opts)
+keymap('n',  '<S-tab>',          ':bprev<cr>',                               opts)
 keymap('n',  'sl',               ':set splitright<cr>:vsplit<cr>',           opts)
 keymap('n',  'sh',               ':set nosplitright<cr>:vsplit<cr>',         opts)
 keymap('n',  'sk',               ':set nosplitbelow<cr>:split<cr>',          opts)

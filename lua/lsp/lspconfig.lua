@@ -36,7 +36,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   navic.attach(client, bufnr)
-  aerial.on_attach(client, bufnr)
+  -- aerial.on_attach(client, bufnr)
 end
 
 local servers = { 'clangd', 'pyright', 'sumneko_lua', 'gopls'}

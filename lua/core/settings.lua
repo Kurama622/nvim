@@ -62,4 +62,19 @@ endfunction
 
 au InsertLeave * call Fcitx2en()
 au InsertEnter * call Fcitx2zh()
+
+function CloseOnLastBuffer()
+  let cnt = 0
+  for i in range(0, bufnr('$'))
+    if buflisted(i)
+      let cnt += 1
+    endif
+  endfor
+
+  if cnt > 1
+    bd
+  else
+    q
+  endif
+endfunction
 ]]
