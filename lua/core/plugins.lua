@@ -180,7 +180,7 @@ return require('packer').startup(function(use)
 
   -- file find
   use { 'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' , opt=true},
+    requires = { {'nvim-lua/plenary.nvim'}},
     cmd = 'Telescope',
     config = function()
         require 'module.telescope'
