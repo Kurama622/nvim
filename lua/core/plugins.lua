@@ -246,14 +246,18 @@ return require('packer').startup(function(use)
     cmd = 'GitBlameToggle'
   }
 
-  -- bufferline
+  -- tabline
   use {
-    'akinsho/bufferline.nvim',
-    tag = 'v3.*',
-    requires = 'kyazdani42/nvim-web-devicons',
+    'kyazdani42/nvim-web-devicons',
+    event = { 'TabNew', 'InsertEnter'}
+  }
+
+  use {
+    'seblj/nvim-tabline',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    event = 'TabNew',
     config = function()
-      vim.opt.termguicolors = true,
-      require('bufferline').setup{}
+      require 'module.tabline'
     end
   }
 
@@ -273,6 +277,14 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- use {
+  --   '~/Desktop/speedup-nvim',
+  --   config = function()
+  --     -- require("speedup-nvim").setup()
+  --     vim.api.nvim_set_keymap('n', 'k', ':speedupnk<cr>', {noremap=true, silent=true})
+  --     vim.api.nvim_set_keymap('v', 'k', ':speedupvk<cr>', {noremap=true, silent=true})
+  --   end
+  -- }
   if packer_bootstrap then
     require('packer').sync()
   end
