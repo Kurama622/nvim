@@ -2,7 +2,7 @@
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 local navic = require("nvim-navic")
-local aerial = require("aerial")
+-- local aerial = require("aerial")
 
 -- 显示当前行的语法检查信息
 vim.api.nvim_set_keymap('n', '<leader>s', '<cmd>lua vim.diagnostic.open_float({focusable = false, show_header = false, border = "rounded"})<CR>', opts)

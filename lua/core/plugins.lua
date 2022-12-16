@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     config = function()
         require 'lsp.lspconfig'
     end,
+    -- after = 'LuaSnip'
     event = 'VimEnter'
   }
   use {
@@ -42,6 +43,9 @@ return require('packer').startup(function(use)
   -- snippets
   use {
     'L3MON4D3/LuaSnip',
+    config = function()
+      require 'completion.snippets'
+    end,
     after = 'friendly-snippets'
   }
   use {
@@ -263,6 +267,7 @@ return require('packer').startup(function(use)
 
   -- others
   use 'rcarriga/nvim-notify'
+
   use {
     'SmiteshP/nvim-navic',
     requires = 'neovim/nvim-lspconfig',
@@ -290,3 +295,4 @@ return require('packer').startup(function(use)
   end
   
 end)
+

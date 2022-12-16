@@ -6,11 +6,7 @@ end
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 local window = cmp.window
-require('luasnip/loaders/from_vscode').lazy_load()
-require("luasnip.loaders.from_vscode").load({
-  -- Load snippets from my-snippets dir ($HOME/.config/nvim/my-snippets)
-  paths = {vim.fn.stdpath("config") .. "/my-snippets" }
-})
+
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -41,10 +37,10 @@ local kind_icons = {
 
 cmp.setup({
   snippet = {
-  -- REQUIRED - you must specify a snippet engine
+    -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-  end,
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
   },
 
   mapping = {
@@ -88,19 +84,19 @@ cmp.setup({
       --[[ Kind icons ]]
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
-        path = "[Path]",
-        buffer = "[Buffer]",
+        luasnip = "[Snippet]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM_LUA]",
-        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = cmp.config.sources({
+    { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path'},
   }),

@@ -93,6 +93,7 @@ _G.packer_plugins = {
   },
   LuaSnip = {
     after = { "nvim-cmp" },
+    config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24completion.snippets\frequire\0" },
     load_after = {
       ["friendly-snippets"] = true
     },
@@ -128,7 +129,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
-    after = { "cmp-buffer", "cmp-cmdline", "cmp-path" },
+    after = { "cmp-path", "cmp-buffer", "cmp-cmdline" },
     after_files = { "/home/vegeta/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua" },
     load_after = {
       ["nvim-cmp"] = true
@@ -240,7 +241,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp_luasnip", "cmp-nvim-lsp", "nvim-autopairs", "cmp-nvim-lua" },
+    after = { "cmp-nvim-lua", "cmp-nvim-lsp", "nvim-autopairs", "cmp_luasnip" },
     config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19completion.cmp\frequire\0" },
     load_after = {
       LuaSnip = true
@@ -471,13 +472,6 @@ pcall(vim.api.nvim_create_user_command, 'Lazygit', function(cmdargs)
           require('packer.load')({'fm-nvim'}, { cmd = 'Lazygit' }, _G.packer_plugins)
           return vim.fn.getcompletion('Lazygit ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'GitBlameToggle', function(cmdargs)
-          require('packer.load')({'git-blame.nvim'}, { cmd = 'GitBlameToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'git-blame.nvim'}, { cmd = 'GitBlameToggle' }, _G.packer_plugins)
-          return vim.fn.getcompletion('GitBlameToggle ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'DapToggleBreakpoint', function(cmdargs)
           require('packer.load')({'nvim-dap'}, { cmd = 'DapToggleBreakpoint', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -513,12 +507,12 @@ pcall(vim.api.nvim_create_user_command, 'DapStepOut', function(cmdargs)
           require('packer.load')({'nvim-dap'}, { cmd = 'DapStepOut' }, _G.packer_plugins)
           return vim.fn.getcompletion('DapStepOut ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'DapStepInto', function(cmdargs)
-          require('packer.load')({'nvim-dap'}, { cmd = 'DapStepInto', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'CommentToggle', function(cmdargs)
+          require('packer.load')({'nvim-comment'}, { cmd = 'CommentToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-dap'}, { cmd = 'DapStepInto' }, _G.packer_plugins)
-          return vim.fn.getcompletion('DapStepInto ', 'cmdline')
+          require('packer.load')({'nvim-comment'}, { cmd = 'CommentToggle' }, _G.packer_plugins)
+          return vim.fn.getcompletion('CommentToggle ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'DapTerminate', function(cmdargs)
           require('packer.load')({'nvim-dap'}, { cmd = 'DapTerminate', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -526,6 +520,13 @@ pcall(vim.api.nvim_create_user_command, 'DapTerminate', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'nvim-dap'}, { cmd = 'DapTerminate' }, _G.packer_plugins)
           return vim.fn.getcompletion('DapTerminate ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'GitBlameToggle', function(cmdargs)
+          require('packer.load')({'git-blame.nvim'}, { cmd = 'GitBlameToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'git-blame.nvim'}, { cmd = 'GitBlameToggle' }, _G.packer_plugins)
+          return vim.fn.getcompletion('GitBlameToggle ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'StartupTime', function(cmdargs)
           require('packer.load')({'vim-startuptime'}, { cmd = 'StartupTime', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -541,6 +542,13 @@ pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
           require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope' }, _G.packer_plugins)
           return vim.fn.getcompletion('Telescope ', 'cmdline')
       end})
+pcall(vim.api.nvim_create_user_command, 'DapStepInto', function(cmdargs)
+          require('packer.load')({'nvim-dap'}, { cmd = 'DapStepInto', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nvim-dap'}, { cmd = 'DapStepInto' }, _G.packer_plugins)
+          return vim.fn.getcompletion('DapStepInto ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'TableModeToggle', function(cmdargs)
           require('packer.load')({'vim-table-mode'}, { cmd = 'TableModeToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -548,22 +556,15 @@ pcall(vim.api.nvim_create_user_command, 'TableModeToggle', function(cmdargs)
           require('packer.load')({'vim-table-mode'}, { cmd = 'TableModeToggle' }, _G.packer_plugins)
           return vim.fn.getcompletion('TableModeToggle ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'CommentToggle', function(cmdargs)
-          require('packer.load')({'nvim-comment'}, { cmd = 'CommentToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-comment'}, { cmd = 'CommentToggle' }, _G.packer_plugins)
-          return vim.fn.getcompletion('CommentToggle ', 'cmdline')
-      end})
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'nvim-web-devicons', 'friendly-snippets', 'indent-blankline.nvim', 'nvim-treesitter'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au TabNew * ++once lua require("packer.load")({'nvim-web-devicons', 'nvim-tabline'}, { event = "TabNew *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-lspconfig', 'nvim-lsp-installer'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au TabNew * ++once lua require("packer.load")({'nvim-tabline', 'nvim-web-devicons'}, { event = "TabNew *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-lsp-installer', 'nvim-lspconfig'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-web-devicons', 'galaxyline.nvim', 'indent-blankline.nvim', 'nvim-treesitter', 'friendly-snippets'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
