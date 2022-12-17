@@ -541,12 +541,17 @@ ls.filetype_set("cpp", { "c" })
 -- Beside defining your own snippets you can also load snippets from "vscode-like" packages
 -- that expose snippets in json files, for example <https://github.com/rafamadriz/friendly-snippets>.
 
+
+-- require("luasnip.loaders.from_vscode").load({ include = { "c", "python", "markdown" } }) -- Load only python snippets
+
 require('luasnip/loaders/from_vscode').lazy_load()
 
 require("luasnip.loaders.from_vscode").load({
   -- Load snippets from my-snippets dir ($HOME/.config/nvim/my-snippets)
   paths = { vim.fn.stdpath('config') .. '/my-snippets' }
 })
+
+
 
 -- require("luasnip.loaders.from_vscode").load({ include = { "python" } }) -- Load only python snippets
 
@@ -697,7 +702,6 @@ ls.add_snippets("all", {
 
 local shift_switch = {
   ['4'] = function()
-    print("enter")
     return '$'
   end,
   ['5'] = function()
@@ -727,7 +731,6 @@ ls.add_snippets("all", {
   )},
   {
     type = "autosnippets",
-    key = "shifit"
+    key = "shift"
   }
 )
-
