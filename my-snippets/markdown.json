@@ -1,0 +1,33 @@
+{
+  "true": {
+    "prefix": "true",
+    "body": [
+      "${1|true,false|}"
+    ],
+    "description": "true -> false"
+  },
+  "false": {
+    "prefix": "false",
+    "body": [
+      "${1|false,true|}"
+    ],
+    "description": "false -> true"
+  },
+  "image": {
+    "prefix": ["img", "!"],
+    "body": [
+      "![${1:img_name}]($TM_SELECTED_TEXT)"
+    ],
+    "description": " -> image"
+  },
+  "Header": {
+    "prefix": "ifn",
+    "body": [
+      "#ifndef ${1:_HEADER_H}",
+      "#define $1",
+      "$0",
+      "#endif //$1"
+    ],
+    "description": "add _HEADER_H"
+  }
+}

@@ -10,12 +10,16 @@
         "path": "./debug_config.json"
       },
       {
-        "language": "cpp",
+        "language": "c",
         "path": "./cpp.json"
       },
       {
         "language": "python",
         "path": "./python.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
       }
     ]
   }

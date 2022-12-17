@@ -14,5 +14,22 @@
       "$1"
     ],
     "description": "vector"
+  },
+  "Header": {
+    "prefix": "ifn",
+    "body": [
+      "#ifndef ${1:_HEADER_H}",
+      "#define $1",
+      "$0",
+      "#endif //$1"
+    ],
+    "description": "add _HEADER_H"
+  },
+  "cout": {
+    "prefix": "cout",
+    "body": [
+      "std::cout << ${1:\"message\"} << std::endl;$0"
+    ],
+    "description": "print message"
   }
 }
