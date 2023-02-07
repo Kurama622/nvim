@@ -37,44 +37,45 @@ o.laststatus     = 2
 op.list          = true
 op.listchars     = {tab = '▸ ', trail = '▫'}  -- op.listchars     = {tab = '▸ ', trail = '▫', eol = '↵'}
 op.display       = 'lastline'
-o.winbar         = "%{%v:lua.require'nvim-navic'.get_location()%}"
+op.fileencodings = {'utf-8', 'gbk', 'ucs-bom', 'cp936'}
+-- o.winbar         = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
-vim.cmd [[
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
+-- vim.cmd [[
+-- au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
 
-function! Fcitx2en()
-  let input_status = system('fcitx5-remote')
-  if input_status == 2
-    let b:inputtoggle = 1
-    call system('fcitx5-remote -c')
-  endif
-endfunction
-function! Fcitx2zh()
-  try
-  if b:inputtoggle == 1
-    call system('fcitx5-remote -o')
-    let b:inputtoggle = 0
-  endif
-  catch /inputtoggle/
-    let b:inputtoggle = 0
-  endtry
-endfunction
+-- function! Fcitx2en()
+--   let input_status = system('fcitx5-remote')
+--   if input_status == 2
+--     let b:inputtoggle = 1
+--     call system('fcitx5-remote -c')
+--   endif
+-- endfunction
+-- function! Fcitx2zh()
+--   try
+--   if b:inputtoggle == 1
+--     call system('fcitx5-remote -o')
+--     let b:inputtoggle = 0
+--   endif
+--   catch /inputtoggle/
+--     let b:inputtoggle = 0
+--   endtry
+-- endfunction
 
-au InsertLeave * call Fcitx2en()
-au InsertEnter * call Fcitx2zh()
+-- au InsertLeave * call Fcitx2en()
+-- au InsertEnter * call Fcitx2zh()
 
-function CloseOnLastBuffer()
-  let cnt = 0
-  for i in range(0, bufnr('$'))
-    if buflisted(i)
-      let cnt += 1
-    endif
-  endfor
+-- function CloseOnLastBuffer()
+--   let cnt = 0
+--   for i in range(0, bufnr('$'))
+--     if buflisted(i)
+--       let cnt += 1
+--     endif
+--   endfor
 
-  if cnt > 1
-    bd
-  else
-    q
-  endif
-endfunction
-]]
+--   if cnt > 1
+--     bd
+--   else
+--     q
+--   endif
+-- endfunction
+-- ]]

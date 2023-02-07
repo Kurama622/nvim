@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   -- run
   use {
     'StubbornVegeta/FloatRun',
-    cmd = {'FloatRun', 'FloatTerm'},
+    cmd = {'FloatRunToggle',  'FloatTermToggle'},
     config = function()
         require 'core.floatrun'
     end,

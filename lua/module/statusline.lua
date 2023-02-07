@@ -1,3 +1,4 @@
+local navic = require("nvim-navic")
 local gl = require('galaxyline')
 local colors = require('galaxyline.theme').default
 local condition = require('galaxyline.condition')
@@ -52,13 +53,31 @@ gls.left[5] = {
 }
 
 gls.left[6] = {
-  LineInfo = {
-    provider = 'LineColumn',
+  nvimNavic = {
+    provider = function()
+      local provider_return = ""
+      if navic.get_location() ~= "" then
+        provider_return = " › " .. navic.get_location()
+      end
+      return provider_return
+    end,
+    condtion = function()
+      return navic.is_available()
+    end,
+    highlight = { colors.blue, colors.bg, 'italic' },
     separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.fg,colors.bg},
+    separator_highlight = { 'NONE', colors.bg },
   },
 }
+
+-- gls.left[6] = {
+--   LineInfo = {
+--     provider = 'LineColumn',
+--     separator = ' ',
+--     separator_highlight = {'NONE',colors.bg},
+--     highlight = {colors.fg,colors.bg},
+--   },
+-- }
 
 gls.left[7] = {
   PerCent = {

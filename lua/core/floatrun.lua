@@ -15,6 +15,7 @@ require("FloatRun").setup{
     ['python'] = "python " .. file,
     ['lua'] = "luajit " .. file,
     ['sh'] = "sh " .. file,
+    [''] = "",
   }
 }
 
