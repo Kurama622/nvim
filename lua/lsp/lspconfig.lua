@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
   -- aerial.on_attach(client, bufnr)
 end
 
-local servers = { 'clangd', 'pyright', 'sumneko_lua', 'gopls'}
+local servers = { 'clangd', 'pyright', 'lua_ls', 'gopls'}
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
