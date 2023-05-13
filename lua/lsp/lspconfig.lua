@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
   -- aerial.on_attach(client, bufnr)
 end
 
-local servers = { 'clangd', 'pyright', 'lua_ls', 'gopls'}
+local servers = { 'pyright', 'lua_ls', 'gopls'}
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -50,6 +50,13 @@ for _, lsp in pairs(servers) do
   }
 end
 
+require'lspconfig'.clangd.setup{
+    on_attach = on_attach,
+    flags = {
+    debounce_text_changes = 150,
+    },
+    filetypes = {'c', 'cpp', 'cuda'}
+}
 vim.diagnostic.config({
   virtual_text = false,
   signs = true,

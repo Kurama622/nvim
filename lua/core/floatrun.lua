@@ -15,6 +15,7 @@ require("FloatRun").setup{
     ['python'] = "python " .. file,
     ['lua'] = "luajit " .. file,
     ['sh'] = "sh " .. file,
+    ['cuda'] = "hipify-perl " .. file .. " > " .. vim.fn.expand('%<') .. ".cpp && hipcc " .. vim.fn.expand('%<') .. ".cpp -o " .. vim.fn.expand('%<') .. " && ./" .. vim.fn.expand('%<'),
     [''] = "",
   }
 }

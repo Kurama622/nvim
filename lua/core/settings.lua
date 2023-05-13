@@ -40,6 +40,11 @@ op.display       = 'lastline'
 op.fileencodings = {'utf-8', 'gbk', 'ucs-bom', 'cp936'}
 -- o.winbar         = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
+vim.cmd [[ 
+au BufRead,BufNewFile *.cu                setfiletype cuda
+]]
+
+
 -- vim.cmd [[
 -- au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
 
