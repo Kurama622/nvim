@@ -192,17 +192,29 @@ return require('packer').startup(function(use)
   }
 
   -- markdown
-  use {
-    'iamcco/markdown-preview.nvim',
-    run = 'cd app && npm install',
+  use{
+    'toppair/peek.nvim',
+    run = 'deno task --quiet build:fast',
     config = function()
         require 'module.markdown_preview'
     end,
     cmd = 'MarkdownPreview',
   }
+  -- use {
+  --   'iamcco/markdown-preview.nvim',
+  --   run = 'cd app && npm install',
+  --   config = function()
+  --       require 'module.markdown_preview'
+  --   end,
+  --   cmd = 'MarkdownPreview',
+  -- }
   use {
     'dhruvasagar/vim-table-mode',
     cmd = 'TableModeToggle'
+  }
+  use {
+    'mzlogin/vim-markdown-toc',
+    cmd = {'GenTocGFM', 'GenTocRedcarpet', 'GenTocGitLab', 'GenTocMarked'}
   }
 
   -- debug
