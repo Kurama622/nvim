@@ -214,7 +214,7 @@ return require('packer').startup(function(use)
   }
   use {
     'mzlogin/vim-markdown-toc',
-    cmd = {'GenTocGFM', 'GenTocRedcarpet', 'GenTocGitLab', 'GenTocMarked'}
+    cmd = {'GenTocGFM', 'GenTocRedcarpet', 'GenTocGitLab', 'GenTocMarked', 'UpdateToc'}
   }
 
   -- debug
